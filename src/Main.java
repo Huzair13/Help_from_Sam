@@ -13,12 +13,24 @@ public class Main {
     }
 
     private static int findSamHelp(int scoreToAchieve) {
-        int samHelp=1;
-        int currentNum=1;
-        for(int iterator=1;iterator<=scoreToAchieve;iterator*=2){
-            currentNum=iterator;
+
+        int samHelpCount=0;
+        while(scoreToAchieve>0){
+            if(scoreToAchieve%2==0){
+                scoreToAchieve/=2;
+            }
+            else{
+                scoreToAchieve-=1;
+                samHelpCount++;
+            }
         }
-        samHelp+=(scoreToAchieve-currentNum);
-        return samHelp;
+        return samHelpCount;
+//        int samHelp=1;
+//        int currentNum=1;
+//        for(int iterator=1;iterator<=scoreToAchieve;iterator*=2){
+//            currentNum=iterator;
+//        }
+//        samHelp+=(scoreToAchieve-currentNum);
+//        return samHelp;
     }
 }
